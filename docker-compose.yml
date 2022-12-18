@@ -6,13 +6,15 @@ services:
     ports:
       - 9000
     command:
-      - com.ouroboros.enable=true
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
       - '--web.console.libraries=/usr/share/prometheus/console_libraries'
       - '--web.console.templates=/usr/share/prometheus/consoles'
     networks:
       - monitoring
+    labels:
+      - com.ouroboros.enable=true
+
 networks:
   monitoring:
     external: true
