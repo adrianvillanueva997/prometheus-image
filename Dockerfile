@@ -1,3 +1,3 @@
-FROM prom/prometheus:v2.39.1
+FROM prom/prometheus:v2.40.7
 COPY prometheus/ /etc/prometheus/
 EXPOSE 9000
