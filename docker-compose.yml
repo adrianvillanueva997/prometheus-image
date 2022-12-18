@@ -1,0 +1,16 @@
+services:
+  prometheus:
+    image: ghcr.io/adrianvillanueva997/prometheus
+    container_name: prometheus
+    ports:
+      - 9000
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+      - monitoring
+networks:
+  monitoring:
+    external: true
