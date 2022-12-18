@@ -10,12 +10,16 @@ scrape_configs:
   - job_name: "traefik"
     static_configs:
       - targets:
-          - "traefik:8082"
-  # - job_name: "node_exporter"
-  #   static_configs:
-  #     - targets:
-  #         - "node_exporter:9100"
-  # - job_name: "cadvisor"
-  #   static_configs:
-  #     - targets:
-  #         - "cadvisor:8080"
+          - "traefik"
+  - job_name: "node_exporter"
+    static_configs:
+      - targets:
+          - "node_exporter"
+  - job_name: "cadvisor"
+    static_configs:
+      - targets:
+          - "cadvisor"
+  - job_name: "grafana"
+    static_configs:
+      - targets:
+          - "grafana"
